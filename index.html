@@ -527,6 +527,141 @@
       border-top: 1px solid rgba(255,255,255,0.06);
     }
 
+
+    /* ── TIMELINE ── */
+    #portfolio { background: var(--navy); }
+    #portfolio .section-title { color: #fff; }
+    #portfolio .section-line { background: var(--gold); }
+    #portfolio .section-label { color: var(--gold); }
+
+    .timeline {
+      position: relative;
+      max-width: 860px;
+      margin: 0 auto;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold), rgba(200,151,58,0.1));
+    }
+    .tl-item {
+      position: relative;
+      padding-left: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot {
+      position: absolute;
+      left: -5px;
+      top: 16px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--navy);
+      box-shadow: 0 0 0 3px rgba(200,151,58,0.25);
+    }
+    .tl-dot-past { background: rgba(200,151,58,0.35); box-shadow: none; }
+    .tl-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 1.6rem 1.8rem;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .tl-card:hover { border-color: rgba(200,151,58,0.35); transform: translateX(4px); }
+    .tl-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .tl-company {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+    .tl-role {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .tl-meta { text-align: right; }
+    .tl-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      background: rgba(200,151,58,0.15);
+      color: var(--gold);
+      padding: 0.25rem 0.7rem;
+      border-radius: 2px;
+      margin-bottom: 0.3rem;
+    }
+    .tl-badge-past {
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.4);
+    }
+    .tl-location {
+      display: block;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.05em;
+    }
+    .tl-location i { margin-right: 0.3rem; font-size: 0.65rem; }
+    .tl-points {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+    }
+    .tl-points li {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      padding: 0.35rem 0 0.35rem 1.2rem;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .tl-points li:last-child { border-bottom: none; }
+    .tl-points li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+    .tl-points li strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+    .tl-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+    .tl-tags span {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.4);
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+    }
+    @media (max-width: 576px) {
+      .tl-header { flex-direction: column; }
+      .tl-meta { text-align: left; }
+      .tl-card { padding: 1.2rem; }
+    }
+
     /* ── ANIMATIONS ── */
     .fade-up {
       opacity: 0;
@@ -558,7 +693,7 @@
         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#services">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Experience</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         <li class="nav-item ms-2">
           <a class="btn-cv-nav" href="Akhil_Gupta_CV.pdf" download>
@@ -579,10 +714,10 @@
       <div class="col-lg-7 py-5">
         <div class="hero-tag">Software Professional · India</div>
         <h1 class="hero-title">Hello, I'm<br><span>Akhil Gupta</span></h1>
-        <p class="hero-desc">Seasoned software professional with 15 years of enterprise-level software development, data analytics, and program management experience across global industries.</p>
+        <p class="hero-desc">Seasoned software professional with 14 years of enterprise-level software development, data analytics, and program management experience across global industries.</p>
         <div class="hero-stats">
           <div class="stat-item">
-            <div class="stat-num">15+</div>
+            <div class="stat-num">14+</div>
             <div class="stat-label">Years Experience</div>
           </div>
           <div class="stat-item" style="padding-left:2rem; border-left: 1px solid rgba(255,255,255,0.1);">
@@ -758,81 +893,144 @@
   </div>
 </section>
 
-<!-- PORTFOLIO -->
+<!-- EXPERIENCE -->
 <section id="portfolio">
   <div class="container">
     <div class="text-center mb-5 fade-up">
-      <div class="section-label">My Work</div>
-      <h2 class="section-title">Selected Projects</h2>
+      <div class="section-label">Career Journey</div>
+      <h2 class="section-title">Professional Experience</h2>
       <div class="section-line mx-auto"></div>
     </div>
-    <div class="row g-4">
-      <div class="col-lg-4 col-md-6 fade-up">
-        <div class="portfolio-card">
-          <div class="portfolio-img-placeholder"><i class="fas fa-play-circle"></i></div>
-          <div class="portfolio-body">
-            <div class="portfolio-type">Web Application</div>
-            <h4>YouTube Clone</h4>
-            <p>A full-featured video streaming platform with user authentication and responsive UI.</p>
-            <a href="#" class="btn-portfolio">View Project <i class="fas fa-arrow-right"></i></a>
+    <div class="timeline">
+
+      <div class="tl-item fade-up">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-company">FNZ</div>
+              <div class="tl-role">Senior Technical Program Manager</div>
+            </div>
+            <div class="tl-meta">
+              <span class="tl-badge">Oct 2025 &mdash; Present</span>
+              <span class="tl-location"><i class="fas fa-map-marker-alt"></i> Gurugram, IN</span>
+            </div>
           </div>
+          <ul class="tl-points">
+            <li>Managing 50+ Development and QA engineers building an AI-based advisory ecosystem SaaS offering managing E2E Financial advisory process.</li>
+            <li>Transformation of development activities with the use of AI-based development tools like<strong>MS-Copilot</strong> and Claude<strong></strong>.</li>
+          </ul>
+          <div class="tl-tags"><span>Azure</span><span>MS-Copliot</span><span>Databricks</span><span>Data Engineering</span><span>Investment Analytics</span></div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 fade-up">
-        <div class="portfolio-card">
-          <div class="portfolio-img-placeholder"><i class="fas fa-question-circle"></i></div>
-          <div class="portfolio-body">
-            <div class="portfolio-type">Interactive App</div>
-            <h4>Quiz Application</h4>
-            <p>Dynamic quiz platform with real-time scoring, timer functionality, and leaderboards.</p>
-            <a href="#" class="btn-portfolio">View Project <i class="fas fa-arrow-right"></i></a>
+
+      <div class="tl-item fade-up">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-company">GreyOrange</div>
+              <div class="tl-role">Technical Program Manager</div>
+            </div>
+            <div class="tl-meta">
+              <span class="tl-badge">Apr 2024 &mdash; Sep 2025</span>
+              <span class="tl-location"><i class="fas fa-map-marker-alt"></i> Gurugram, IN</span>
+            </div>
           </div>
+          <ul class="tl-points">
+            <li>Managing 15+ data engineers and analysts building a GCP-based retail analytics solution for global CPG clients.</li>
+            <li>Leading development of a unified model for parallel batch and streaming data processing using <strong>Kafka</strong> and <strong>Databricks</strong>.</li>
+          </ul>
+          <div class="tl-tags"><span>GCP</span><span>Kafka</span><span>Databricks</span><span>Data Engineering</span><span>CPG Analytics</span></div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 fade-up">
-        <div class="portfolio-card">
-          <div class="portfolio-img-placeholder"><i class="fas fa-store"></i></div>
-          <div class="portfolio-body">
-            <div class="portfolio-type">Landing Page</div>
-            <h4>Product Landing Page</h4>
-            <p>Conversion-optimised product page with animations and integrated checkout flow.</p>
-            <a href="#" class="btn-portfolio">View Project <i class="fas fa-arrow-right"></i></a>
+
+      <div class="tl-item fade-up">
+        <div class="tl-dot tl-dot-past"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-company">Stryker Global Technology Center</div>
+              <div class="tl-role">Technical Program Manager</div>
+            </div>
+            <div class="tl-meta">
+              <span class="tl-badge tl-badge-past">May 2021 &mdash; Apr 2024</span>
+              <span class="tl-location"><i class="fas fa-map-marker-alt"></i> Gurugram, IN</span>
+            </div>
           </div>
+          <ul class="tl-points">
+            <li>Developed an Azure-based data ingestion solution using Cloud Functions and Data Factory into ADLS, processed via <strong>Azure Synapse</strong> for hospital treatment insights.</li>
+            <li>Managed E2E development of <strong>CNN-based image segmentation</strong> models for Knee and Hip replacement surgical software products.</li>
+          </ul>
+          <div class="tl-tags"><span>Azure Synapse</span><span>Data Factory</span><span>CNN / ML</span><span>Medical Devices</span><span>Program Management</span></div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 fade-up">
-        <div class="portfolio-card">
-          <div class="portfolio-img-placeholder"><i class="fas fa-comments"></i></div>
-          <div class="portfolio-body">
-            <div class="portfolio-type">Messaging</div>
-            <h4>Messaging Service</h4>
-            <p>Real-time messaging platform with end-to-end encryption and file sharing capabilities.</p>
-            <a href="#" class="btn-portfolio">View Project <i class="fas fa-arrow-right"></i></a>
+
+      <div class="tl-item fade-up">
+        <div class="tl-dot tl-dot-past"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-company">HCL Technologies</div>
+              <div class="tl-role">Business Manager</div>
+            </div>
+            <div class="tl-meta">
+              <span class="tl-badge tl-badge-past">Jul 2019 &mdash; May 2021</span>
+              <span class="tl-location"><i class="fas fa-map-marker-alt"></i> Noida, IN</span>
+            </div>
           </div>
+          <ul class="tl-points">
+            <li>Built a data integration solution via <strong>Azure Synapse &amp; REST APIs</strong> for a Swedish manufacturing client&rsquo;s 3PL vendors, improving ETA accuracy by 30%.</li>
+            <li>Led ML-based spend categorisation model for a pharma client, reducing indirect spend by <strong>25% YOY</strong>.</li>
+            <li>Automated the Procure-to-Pay process for a Nordic client using <strong>Alteryx &amp; MuleSoft</strong> as SAP middleware.</li>
+            <li>Drove <strong>$10M+ in revenue growth</strong> through tailored data solutions and expanded client engagements.</li>
+          </ul>
+          <div class="tl-tags"><span>Azure Synapse</span><span>Alteryx</span><span>MuleSoft / SAP</span><span>ML Analytics</span><span>Logistics</span><span>P2P</span></div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 fade-up">
-        <div class="portfolio-card">
-          <div class="portfolio-img-placeholder"><i class="fab fa-twitter"></i></div>
-          <div class="portfolio-body">
-            <div class="portfolio-type">Social Platform</div>
-            <h4>Twitter Clone</h4>
-            <p>Microblogging platform with real-time feeds, follow system, and trending topics.</p>
-            <a href="#" class="btn-portfolio">View Project <i class="fas fa-arrow-right"></i></a>
+
+      <div class="tl-item fade-up">
+        <div class="tl-dot tl-dot-past"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-company">Shriram Properties</div>
+              <div class="tl-role">Product Manager</div>
+            </div>
+            <div class="tl-meta">
+              <span class="tl-badge tl-badge-past">Aug 2018 &mdash; Apr 2019</span>
+              <span class="tl-location"><i class="fas fa-map-marker-alt"></i> Bengaluru, IN</span>
+            </div>
           </div>
+          <ul class="tl-points">
+            <li>Designed schema and data ingestion pipelines for a <strong>sales analytics platform</strong> serving 15+ business user profiles to track key metrics.</li>
+          </ul>
+          <div class="tl-tags"><span>Product Management</span><span>Data Pipelines</span><span>Sales Analytics</span></div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 fade-up">
-        <div class="portfolio-card">
-          <div class="portfolio-img-placeholder"><i class="fas fa-pen-nib"></i></div>
-          <div class="portfolio-body">
-            <div class="portfolio-type">Content Platform</div>
-            <h4>Blog Application</h4>
-            <p>Full-stack blogging platform with rich text editor, tags, comments, and SEO optimisation.</p>
-            <a href="#" class="btn-portfolio">View Project <i class="fas fa-arrow-right"></i></a>
+
+      <div class="tl-item fade-up">
+        <div class="tl-dot tl-dot-past"></div>
+        <div class="tl-card">
+          <div class="tl-header">
+            <div>
+              <div class="tl-company">Maruti Suzuki India Limited</div>
+              <div class="tl-role">Program Manager</div>
+            </div>
+            <div class="tl-meta">
+              <span class="tl-badge tl-badge-past">Jun 2010 &mdash; Apr 2017</span>
+              <span class="tl-location"><i class="fas fa-map-marker-alt"></i> Gurugram, IN</span>
+            </div>
           </div>
+          <ul class="tl-points">
+            <li>Led rollout and adoption of a new sourcing system across Engineering and Supply Chain verticals with a <strong>500+ user base</strong>.</li>
+            <li>Collaborated with the SAP-IBP team on demand forecasting models for spares planning using BOM components.</li>
+            <li>Built <strong>C# and VBA design-automation tools</strong> for vehicle mock-ups, cutting design time by 20% per model family.</li>
+          </ul>
+          <div class="tl-tags"><span>SAP-IBP</span><span>C# / VBA</span><span>Supply Chain</span><span>PLM</span><span>Demand Forecasting</span></div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -913,7 +1111,7 @@
           <a href="#home" class="footer-link">Home</a>
           <a href="#about" class="footer-link">About</a>
           <a href="#services" class="footer-link">Skills</a>
-          <a href="#portfolio" class="footer-link">Portfolio</a>
+          <a href="#portfolio" class="footer-link">Experience</a>
           <a href="#contact" class="footer-link">Contact</a>
         </div>
       </div>
